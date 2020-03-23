@@ -46,6 +46,7 @@ class MenuProfesor extends React.Component {
   cleanSession() {
     localStorage.removeItem("Sesion")
     localStorage.removeItem("Type")
+    localStorage.removeItem("protocolo")
   }
 
   render() {
