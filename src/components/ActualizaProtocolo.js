@@ -14,7 +14,7 @@ class ActualizaProtocolo extends React.Component {
     render() {
         return (
             <div className="container">
-                <Route path="/Alumno/Bienvenido/Actualiza/Palabras" component={() => <PalabrasClave usuario={this.state.usuario} protocolo={this.state.protocolo}/>} />
+                <Route exact path="/Alumno/Bienvenido/Actualiza/Palabras" component={() => <PalabrasClave usuario={this.state.usuario} protocolo={this.state.protocolo}/>} />
                 <h1>Actualiza tu trabajo</h1>
                 <h1>Selecciona una opción</h1>
                 <Link to="/Alumno/Bienvenido/Actualiza/Palabras"><button className="myButton" >Añadir palabras clave</button></Link><br/><br/>

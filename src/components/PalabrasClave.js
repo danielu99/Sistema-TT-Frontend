@@ -17,4 +17,4 @@ class PalabrasClave extends React.Component {
     }
 }
 
-export d
+export default PalabrasClave
