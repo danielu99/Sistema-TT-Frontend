@@ -12,7 +12,9 @@ class ActualizaProtocolo extends React.Component {
         return (
             <div className="container">
                 <h1>Actualiza tu trabajo</h1>
-                <h2>La calificación de su trabajo es:</h2>
+                <h1>Selecciona una opción</h1>
+                <button className="myButton">Añadir palabras clave</button><br/><br/>
+                <button className="myButton">Modificar </button>
             </div>
         );
     }
