@@ -1,4 +1,4 @@
-body {
+body{
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -26,11 +26,12 @@ body {
   }
   
   th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
+    background-color: white;
   }
   
-  tr:nth-child(even){background-color: #f2f2f2}
+  tr:nth-child(even){background-color: white}
   
   th {
     background-color: #4CAF50;

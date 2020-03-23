@@ -26,6 +26,11 @@ class Landing extends Component {
             Actualizar Protocolo
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/Alumno/Bienvenido/info" className="nav-link">
+            Info. Protocolo
+          </Link>
+        </li>
       </ul>
     )
 

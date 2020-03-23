@@ -20,7 +20,7 @@ class URL extends React.Component {
     componentDidUpdate() {
         if (this.state.bandera != 0) {
             alert("Link Actualizado exitósamente!")
-            window.location.href="/Alumno/Bienvenido"
+            window.location.href="/Alumno/Bienvenido/Actualiza"
         }
     }
 

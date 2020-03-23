@@ -1,11 +1,12 @@
-.MenuAlumno {
+ .MenuAlumno {
     text-align: center;
     background-size: cover;
-    /* background-image:  url(https://lh3.googleusercontent.com/proxy/nvKMPVyrEpw6QkUExHb3C61PkBDv353AR5F2DGjmhu3RmSBNYl8WePNCgCN_mNx51Y2i8fCCxO9A0OJ4GrqIJE1uAmq9p3Ix1dJg0Jb-XbE);    */
+    background-image:  url(https://lh3.googleusercontent.com/proxy/nvKMPVyrEpw6QkUExHb3C61PkBDv353AR5F2DGjmhu3RmSBNYl8WePNCgCN_mNx51Y2i8fCCxO9A0OJ4GrqIJE1uAmq9p3Ix1dJg0Jb-XbE);   
   
     height: 500px;
     padding-top: 10px;
   }
+  
 
   .bienvenida{
     color: blak;
@@ -19,6 +20,7 @@
     width: 5px;
   }
   
+  /*
   button{
   background-color: blue;
   background-image:  url(https://cdn2.vectorstock.com/i/1000x1000/17/06/cap-student-icon-white-vector-15961706.jpg);
@@ -31,7 +33,8 @@
     width:50%;
     font-family: ComicSans MS, Geneva, Tahoma, sans-serif;
   color: red;
-  }
+  }*/
+  
   
   nav{
     display:flex;
@@ -61,4 +64,4 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
-  }
+  } 

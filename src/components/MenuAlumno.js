@@ -4,6 +4,7 @@ import Registro from './RegistrarProtocolo'
 import Estado from './EstadoProtocolo'
 import Actualiza from './ActualizaProtocolo'
 import Unirse from './UnirseProtocolo'
+import Info from './infoprotocolo'
 import NavBar from './NavBarAlumno2'
 
 import {
@@ -19,7 +20,7 @@ class MenuAlumno extends React.Component {
         this.state = {
             usuario: localStorage.getItem("Sesion"),
             nombre: '',
-            protocolo:''
+            protocolo: ''
         }
     }
 
@@ -63,11 +64,11 @@ class MenuAlumno extends React.Component {
         })
             .catch(err => console.error(err))
         const json = await response.json();
-        if(json.data.length>0){
-            this.setState({protocolo:json.data[0].numeroTT})
+        if (json.data.length > 0) {
+            this.setState({ protocolo: json.data[0].numeroTT })
         }
-        else{
-            this.setState({protocolo:'null'})
+        else {
+            this.setState({ protocolo: 'null' })
         }
     }
 
@@ -85,6 +86,7 @@ class MenuAlumno extends React.Component {
                 <Route exact path="/Alumno/Bienvenido/" component={() => <Estado usuario={this.state.usuario} />} />
                 <Route path="/Alumno/Bienvenido/Actualiza" component={() => <Actualiza usuario={this.state.usuario} protocolo={this.state.protocolo} />} />
                 <Route exact path="/Alumno/Bienvenido/unirse" component={() => <Unirse usuario={this.state.usuario} />} />
+                <Route exact path="/Alumno/Bienvenido/info" component={() => <Info usuario={this.state.usuario} protocolo={this.state.protocolo} />} />
                 <Link to="/sistematt"><button className="myButton" onClick={this.cleanSession}>Log Out</button></Link>
             </div>
         );

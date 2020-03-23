@@ -71,7 +71,7 @@ class RegistrarProtocolo extends React.Component {
         return (
             <div className="container">
                 <h1>Registrar Protocolo</h1>
-                <h2>Nombre de Trabajo Terminal</h2>
+                <h1>Nombre de Trabajo Terminal</h1>
                 <input type='nombreTT'
                     placeholder='               Nombre TT'
                     value={this.state.nombrett}
@@ -86,7 +86,7 @@ class RegistrarProtocolo extends React.Component {
                 </div>
                 <br></br>
                 */}
-                <h2>Link a PDF</h2>
+                <h1>Link a PDF</h1>
                 <input type='linkTT'
                     placeholder='Ejemplo: http://drive.nombreTT.com"'
                     value={this.state.linktt}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../button.css'
+import '../contenedoresinfo.css'
 
 class ProfesorEvaluacion extends React.Component {
     constructor(props) {
@@ -8,14 +9,17 @@ class ProfesorEvaluacion extends React.Component {
         this.state = {
             profesor: this.props.usuario,
             protocolo: localStorage.getItem("protocolo"),
-            info: []
+            info: [],
+            PalabrasClave: []
         }
-        this.aprobar=this.aprobar.bind(this)
-        this.rechazar=this.rechazar.bind(this)
+        this.aprobar = this.aprobar.bind(this)
+        this.rechazar = this.rechazar.bind(this)
+        this.obtenerPalabras = this.obtenerPalabras.bind(this)
     }
 
     componentDidMount() {
         this.getInfo()
+        this.obtenerPalabras()
     }
 
     async getInfo() {
@@ -63,8 +67,33 @@ class ProfesorEvaluacion extends React.Component {
         if (json.data == 1) {
             alert("Protocolo calificado correctamente!")
         }
-        else{
+        else {
             alert("Algo salió mal")
+        }
+    }
+
+    renderPalabras = ({ Palabra }) =>
+        <tr>
+            <td>
+                {Palabra}
+            </td>
+        </tr>
+
+    async obtenerPalabras() {
+        const response = await fetch("http://192.168.0.18:4000/PalabrasClave", {
+            method: "post",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                protocolo: this.state.protocolo
+            })
+        })
+            .catch(err => console.error(err))
+        const json = await response.json();
+        if (json.data != 0) {
+            this.setState({ PalabrasClave: json.data })
         }
     }
 
@@ -86,7 +115,7 @@ class ProfesorEvaluacion extends React.Component {
         if (json.data == 1) {
             alert("Protocolo calificado correctamente!")
         }
-        else{
+        else {
             alert("Algo salió mal")
         }
     }
@@ -101,7 +130,7 @@ class ProfesorEvaluacion extends React.Component {
                     <h1>Información del Protocolo</h1>
                     <br />
                     <div className="container">
-                        <div>
+                        <div className="div1">
                             <table className="tabla" align="center">
                                 <tr>
                                     <th>NombreTT</th>
@@ -109,10 +138,18 @@ class ProfesorEvaluacion extends React.Component {
                                 </tr>
                                 {this.state.info.map(this.renderProtocolos)}
                             </table>
-                        </div><br />
-                        <button className="myButton" onClick={this.aprobar}>APROBAR</button><br /><br />
-                        <button className="myButton" onClick={this.rechazar}>RECHAZAR</button><br /><br />
-                    </div>
+                        </div>
+                        <div className="div2">
+                            <table className="tabla" align="center">
+                                <tr>
+                                    <th>Palabras Clave</th>
+                                </tr>
+                                {this.state.PalabrasClave.map(this.renderPalabras)}
+                            </table>
+                        </div>
+                    </div><br/>
+                    <button className="myButton" onClick={this.aprobar}>APROBAR</button>
+                    <button className="myButton" onClick={this.rechazar}>RECHAZAR</button>
                 </div>
             )
         }

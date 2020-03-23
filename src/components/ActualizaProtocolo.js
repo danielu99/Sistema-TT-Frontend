@@ -53,7 +53,7 @@ class ActualizaProtocolo extends React.Component {
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <Link to="/Alumno/Bienvenido/Actualiza/URL"><button className="myButton">Modificar URL</button></Link>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <button className="myButton" onClick={this.finalizar}>Actualizar</button>
+                <button className="myButton" onClick={this.finalizar}>Subir Protocolo</button>
             </div>
         );
     }
